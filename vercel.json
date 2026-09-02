@@ -1,14 +1,19 @@
 {
-    "$schema": "https://openapi.vercel.sh/vercel.json",
-    "framework": "hono",
-    "outputDirectory": "src",
-    "rewrites": [
-        {
-            "source": "/favicon.ico",
-            "destination": "/favicon.png"
-        }
-    ],
-    "github": {
-        "silent": true
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "hono",
+  "outputDirectory": "src",
+  "rewrites": [
+    {
+      "source": "/favicon.ico",
+      "destination": "/favicon.png"
     }
+  ],
+  "github": {
+    "silent": true
+  },
+  "functions": {
+    "src/**/*.ts": {
+      "includeFiles": "node_modules/**/patchright-core/browsers.json"
+    }
+  }
 }
